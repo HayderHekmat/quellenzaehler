@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quellenzähler – Welche Kanäle bringen dir wirklich Digistore24-Verkäufe?</title>
+<meta name="description" content="Quellenzähler ordnet jeden Digistore24-Verkauf dem Kanal zu, der ihn gebracht hat. Early Access Warteliste.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="./">Quellen<span>zähler</span></a></div></header>
+<main>
+<div class="wrap hero">
+  <h1>Welche Kanäle bringen dir wirklich Digistore24-Verkäufe?</h1>
+  <p class="sub">Du siehst, dass du verkaufst, aber nicht, woher die Käufer kommen. Quellenzähler ordnet jeden Verkauf, jede Rückerstattung und jedes Abo-Rebill automatisch dem Kanal zu, der ihn gebracht hat: YouTube, Instagram, Newsletter, Affiliate oder Anzeige.</p>
+  <a class="btn" href="#warteliste">Platz reservieren</a>
+
+  <div class="dash" role="img" aria-label="Beispiel-Dashboard mit Beispieldaten: Netto-Umsatz nach Kanal">
+    <div class="dash-h"><strong>Netto-Umsatz nach Kanal · letzte 30 Tage</strong><span class="tag">Beispieldaten</span></div>
+    <div class="row"><span>YouTube</span><span class="bar"><i style="width:100%"></i></span><span class="num">1.240 €</span></div>
+    <div class="row"><span>Newsletter</span><span class="bar"><i style="width:62%"></i></span><span class="num">770 €</span></div>
+    <div class="row"><span>Affiliate</span><span class="bar"><i style="width:41%"></i></span><span class="num">505 €</span></div>
+    <div class="row"><span>Anzeige</span><span class="bar"><i style="width:18%"></i></span><span class="num">220 €</span></div>
+    <div class="row"><span>Instagram</span><span class="bar"><i style="width:7%"></i></span><span class="num">80 €</span></div>
+    <small>Beispieldaten zur Veranschaulichung, nach Rückerstattungen. Keine echten Kundendaten.</small>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <h2>So funktioniert's</h2>
+  <ol class="steps">
+    <li>Ein kleines Skript auf deiner Seite merkt sich, woher der Besucher kommt. Es nutzt keine Cookies.</li>
+    <li>Digistore24 meldet jeden Kauf per Postback (IPN) an Quellenzähler.</li>
+    <li>Du siehst in einem einfachen Dashboard, wie viel Umsatz jeder Kanal tatsächlich bringt.</li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Warum Quellenzähler</h2>
+  <div class="cards">
+    <div class="card">Gehostet in Deutschland, DSGVO-konform, mit AV-Vertrag</div>
+    <div class="card">Rückerstattungen und Rebills werden mitgerechnet, also echter Netto-Umsatz statt Klickzahlen</div>
+    <div class="card">In 10 Minuten eingerichtet; auf Wunsch übernehme ich die Einrichtung für dich</div>
+    <div class="card">Copecart folgt, wenn genug Nachfrage da ist</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="ea">
+    <h2>Early Access</h2>
+    <p class="price">19 € einmalig</p>
+    <p>Damit sicherst du dir die ersten 3 Monate. Startet die Beta nicht wie angekündigt, bekommst du dein Geld zurück.</p>
+    <a class="btn" href="#warteliste">Platz reservieren</a>
+    <p class="note">Die Zahlung wird erst freigeschaltet, wenn die Beta startet.</p>
+  </div>
+</div></section>
+
+<section id="warteliste"><div class="wrap">
+  <h2>Auf die Warteliste</h2>
+  <p class="note">Beim Absenden öffnet sich dein E-Mail-Programm mit einer vorausgefüllten Nachricht an mich. Erst wenn du sie abschickst, wird etwas übertragen.</p>
+  <form id="wl" novalidate>
+    <div><label for="email">E-Mail-Adresse *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="du@beispiel.de"></div>
+    <div><label for="plattform">Plattform</label>
+      <select id="plattform" name="plattform"><option>Digistore24</option><option>Copecart</option><option>Andere</option></select></div>
+    <div><label for="messung">Wie misst du das bisher? <span class="note">(optional)</span></label><textarea id="messung" name="messung" placeholder="z. B. UTM-Links, Excel, gar nicht"></textarea></div>
+    <label class="check"><input id="consent" type="checkbox" required> <span>Ich willige ein, dass meine Angaben zur Bearbeitung meiner Warteliste-Anfrage und zur Kontaktaufnahme zum Beta-Start verwendet werden. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>. Die Einwilligung kann ich jederzeit per E-Mail widerrufen. *</span></label>
+    <p id="err" class="note" role="alert" style="color:#a3261b"></p>
+    <button class="btn" type="submit">Platz reservieren</button>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap">Kein offizielles Produkt von Digistore24. <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div></footer>
+<script>
+document.getElementById('wl').addEventListener('submit',function(e){
+  e.preventDefault();
+  var em=document.getElementById('email'),c=document.getElementById('consent'),err=document.getElementById('err');
+  if(!em.value||!em.checkValidity()){err.textContent='Bitte gib eine gültige E-Mail-Adresse ein.';em.focus();return}
+  if(!c.checked){err.textContent='Bitte bestätige die Einwilligung.';c.focus();return}
+  err.textContent='';
+  var body='E-Mail: '+em.value+'\nPlattform: '+document.getElementById('plattform').value+'\nWie messe ich das bisher: '+(document.getElementById('messung').value||'-')+'\nEinwilligung Datenschutz: ja';
+  location.href='mailto:solutionssmart2026@gmail.com?subject='+encodeURIComponent('Quellenzähler Warteliste')+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
